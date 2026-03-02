@@ -16,6 +16,14 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+}
+
 body {
   margin: 0;
   min-height: 100dvh;
@@ -32,7 +40,7 @@ body {
     max(14px, env(safe-area-inset-right))
     max(14px, env(safe-area-inset-bottom))
     max(14px, env(safe-area-inset-left));
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -261,7 +269,10 @@ body {
   font-size: 0.82rem;
   letter-spacing: 0.5px;
   text-align: center;
-  white-space: nowrap;
+  width: calc(100vw - 24px);
+  max-width: 520px;
+  white-space: normal;
+  line-height: 1.25;
   user-select: none;
 }
 
@@ -291,7 +302,7 @@ body {
 }
 
 .win-card {
-  width: min(92vw, 460px);
+  width: min(100%, 460px);
   background: #ffffff;
   color: #112316;
   border-radius: 22px;
@@ -470,19 +481,25 @@ body {
 
   .app {
     gap: 14px;
-    width: min(100%, 620px);
+    width: 100%;
+    max-width: 620px;
+    overflow-x: clip;
   }
 
   .game-area,
   .controls,
   .top-panel {
+    width: 100%;
+    max-width: 100%;
     padding: 14px;
     border-radius: 16px;
+    overflow-x: clip;
   }
 
   .board {
     gap: 0;
-    width: min(92vw, 520px);
+    width: 100%;
+    max-width: 520px;
   }
 
   .round-line {
