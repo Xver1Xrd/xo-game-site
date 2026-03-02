@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Крестики-Нолики: 4 раунда</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <main class="app">
+    <header class="top-panel">
+      <h1>Крестики-Нолики</h1>
+      <div class="round-line">
+        <span id="roundCounter">Раунд 1 / 4</span>
+        <span id="scoreCounter">Вы 0 : 0 Бот</span>
+      </div>
+    </header>
+
+    <section class="game-area" aria-label="Игровое поле">
+      <div id="board" class="board" role="grid" aria-live="polite"></div>
+      <p id="statusText" class="status">Выберите сложность и начните игру.</p>
+    </section>
+
+    <section class="controls" aria-label="Управление">
+      <div class="difficulty-wrap">
+        <p class="controls-title">Сложность бота</p>
+        <div class="difficulty-buttons" id="difficultyButtons">
+          <button type="button" class="difficulty-btn" data-level="easy">Легко</button>
+          <button type="button" class="difficulty-btn" data-level="medium">Нормально</button>
+          <button type="button" class="difficulty-btn" data-level="hard">Сложно</button>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button type="button" id="startBtn" class="primary hidden">Начать игру</button>
+        <button type="button" id="nextRoundBtn" class="secondary hidden">Следующий раунд</button>
+        <button type="button" id="restartBtn" class="primary hidden">Сыграть еще раз</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-credit">made by xverlxrd &amp; veronikkkiss</footer>
+
+  <div id="winModal" class="win-modal" role="dialog" aria-modal="true" aria-labelledby="winTitle">
+    <div class="win-card">
+      <h2 id="winTitle">Победа!</h2>
+      <p id="winText">Вы прошли все раунды.</p>
+      <div class="win-actions">
+        <button type="button" id="declineBtn" class="modal-btn decline">Отказаться от игры</button>
+        <button type="button" id="playAgainBtn" class="modal-btn play-again">Сыграть снова</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
